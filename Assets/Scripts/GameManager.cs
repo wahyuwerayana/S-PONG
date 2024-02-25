@@ -39,10 +39,10 @@ public class GameManager : MonoBehaviour
     }
 
     public void ScoreCheck(){
-        if(PlayerScoreL == 20){
+        if(PlayerScoreL == 50){
             Debug.Log("Player L Win!");
             this.gameObject.SendMessage("ChangeScene", "MainMenu");
-        } else if(PlayerScoreR == 20){
+        } else if(PlayerScoreR == 50){
             Debug.Log("Player R Win!");
             this.gameObject.SendMessage("ChangeScene", "MainMenu");
         }

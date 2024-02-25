@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 391927737}
   m_Layer: 0
   m_Name: Racket R
-  m_TagString: Player
+  m_TagString: Player R
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -481,7 +481,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c1e060c950b31a943a56e1ad273709e9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.46099043, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -582,8 +582,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveUp: 273
   moveDown: 274
+  moveLeft: 276
+  moveRight: 275
   speed: 10
   boundY: 4
+  boundXfront: -2
+  boundXback: -8
 --- !u!1 &453818389
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,7 +648,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7517d40dd9e6d094f99f2557f94a4438, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.2688679, b: 0.2688679, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -795,8 +799,8 @@ Transform:
   m_GameObject: {fileID: 768000697}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.9051, y: 0.92835, z: 0}
-  m_LocalScale: {x: 2.2249799, y: 2.2702792, z: 7.4316664}
+  m_LocalPosition: {x: 2.713, y: 1.1244, z: 0}
+  m_LocalScale: {x: 0.94422895, y: 0.96345294, z: 3.1538239}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -875,6 +879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0ba3f4f05223a741b7ade3c4bc1487c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSpeed: 10
 --- !u!1 &935513540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,8 +1056,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278452479
+  m_fontColor: {r: 1, g: 0, b: 0.015686275, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1337,7 +1342,7 @@ GameObject:
   - component: {fileID: 1276331609}
   m_Layer: 0
   m_Name: Racket L
-  m_TagString: Player
+  m_TagString: Player L
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1384,7 +1389,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c1e060c950b31a943a56e1ad273709e9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.017280579, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1450,8 +1455,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveUp: 119
   moveDown: 115
+  moveLeft: 97
+  moveRight: 100
   speed: 10
   boundY: 4
+  boundXfront: -2
+  boundXback: -8
 --- !u!70 &1276331609
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1547,7 +1556,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7517d40dd9e6d094f99f2557f94a4438, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.495283, g: 1, b: 0.93459344, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1695,7 +1704,7 @@ Transform:
   m_GameObject: {fileID: 1435676391}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.05, y: -0.02, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0364258, y: 1.0364258, z: 1.0364258}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1825,8 +1834,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4294931968
+  m_fontColor: {r: 0, g: 0.4627451, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

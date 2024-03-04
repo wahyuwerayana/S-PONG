@@ -30,11 +30,11 @@ public class GameManager : MonoBehaviour
         if(wallID == "Line L"){
             PlayerScoreR = PlayerScoreR + 10;
             txtPlayerScoreR.text = PlayerScoreR.ToString();
-            ScoreCheck();
+            Invoke("ScoreCheck", 1);
         } else{
             PlayerScoreL = PlayerScoreL + 10;
             txtPlayerScoreL.text = PlayerScoreL.ToString();
-            ScoreCheck();
+            Invoke("ScoreCheck", 1);
         }
     }
 

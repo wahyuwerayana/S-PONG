@@ -29,15 +29,17 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         var vel = rb.velocity;
-        if(Input.GetKey(moveUp)){
+        if(Input.GetKey(moveUp) || Input.GetKey(moveDown) || Input.GetKey(moveLeft) || Input.GetKey(moveRight)){
+            if(Input.GetKey(moveUp)){
             vel.y = speed;
-        } else if(Input.GetKey(moveDown)){
+            } if(Input.GetKey(moveDown)){
             vel.y = -speed;
-        } else if(Input.GetKey(moveLeft)){
+            } if(Input.GetKey(moveLeft)){
             vel.x = -speed;
-        } else if(Input.GetKey(moveRight)){
+            } if(Input.GetKey(moveRight)){
             vel.x = speed;
-        }else{
+            }
+        } else{
             vel.y = 0;
             vel.x = 0;
         }

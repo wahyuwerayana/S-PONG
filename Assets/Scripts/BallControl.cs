@@ -7,9 +7,11 @@ public class BallControl : MonoBehaviour
     public AudioSource bounceSound;
     public float maxSpeed = 0.1f;
     private Rigidbody2D rb;
+    public TrailRenderer tr;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        tr = GetComponent<TrailRenderer>();
         Invoke("GoBall", 1);
     }
 
@@ -25,6 +27,7 @@ public class BallControl : MonoBehaviour
     void ResetBall(){
         rb.velocity = Vector2.zero;
         transform.position = Vector2.zero;
+        tr.Clear();
     }
 
     void RestartGame(){

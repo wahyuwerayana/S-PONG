@@ -38,13 +38,7 @@ public class BallControl : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other) {
         bounceSound.Play();
         Vector2 vel;
-        if(rb.velocity.x > maxSpeed){
-            vel.x = maxSpeed;
-        } else if(rb.velocity.x < -maxSpeed){
-            vel.x = -maxSpeed;
-        } else{
-            vel.x = rb.velocity.x;
-        }
+        vel.x = rb.velocity.x;
         vel.y = (rb.velocity.y / 2) + (other.collider.attachedRigidbody.velocity.y / 3);
         rb.velocity = vel;
     }

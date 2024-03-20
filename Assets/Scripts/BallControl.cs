@@ -5,7 +5,7 @@ using UnityEngine;
 public class BallControl : MonoBehaviour
 {
     public AudioSource bounceSound;
-    public float maxSpeed = 0.1f;
+    public float maxSpeed = 5f;
     private Rigidbody2D rb;
     public TrailRenderer tr;
     void Start()
@@ -37,15 +37,15 @@ public class BallControl : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other) {
         bounceSound.Play();
-        if(other.collider.CompareTag("Player L") || other.collider.CompareTag("Player R")){
-            Vector2 vel;
+        Vector2 vel;
+        if(rb.velocity.x > maxSpeed){
+            vel.x = maxSpeed;
+        } else if(rb.velocity.x < -maxSpeed){
+            vel.x = -maxSpeed;
+        } else{
             vel.x = rb.velocity.x;
-            vel.y = (rb.velocity.y / 2) + (other.collider.attachedRigidbody.velocity.y / 3);
-         //   if(rb.velocity.magnitude > maxSpeed){
-        //        rb.velocity = rb.velocity.normalized * maxSpeed;
-       //     } else{
-                rb.velocity = vel;
-      //      }
-        } 
+        }
+        vel.y = (rb.velocity.y / 2) + (other.collider.attachedRigidbody.velocity.y / 3);
+        rb.velocity = vel;
     }
 }

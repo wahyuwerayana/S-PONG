@@ -11,7 +11,7 @@ public class PlayerControl : MonoBehaviour
     public KeyCode moveLeft = KeyCode.A;
     public KeyCode moveRight = KeyCode.D;
     public float speed = 10.0f;
-    public float boundY = 3f;
+    public float boundY = 4f;
     public float boundYdown = 4f;
     public float boundXfront = -2f;
     public float boundXback = -8f;
@@ -49,8 +49,8 @@ public class PlayerControl : MonoBehaviour
         var pos = transform.position;
         if(pos.y > boundY){
             pos.y = boundY;
-        } else if(pos.y < -boundYdown){
-            pos.y = -boundYdown;
+        } else if(pos.y < -boundY){
+            pos.y = -boundY;
         } else if((pos.x > boundXfront) && (rb.gameObject.tag == "Player L")){
             pos.x = boundXfront;
         } else if(pos.x < boundXback && (rb.gameObject.tag == "Player L")){

@@ -12,7 +12,7 @@ public class BallControl : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         tr = GetComponent<TrailRenderer>();
-        Invoke("GoBall", 1);
+        Invoke("GoBall", 2);
     }
 
     void GoBall(){

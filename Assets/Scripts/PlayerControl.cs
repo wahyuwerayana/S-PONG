@@ -12,7 +12,6 @@ public class PlayerControl : MonoBehaviour
     public KeyCode moveRight = KeyCode.D;
     public float speed = 10.0f;
     public float boundY = 4f;
-    public float boundYdown = 4f;
     public float boundXfront = -2f;
     public float boundXback = -8f;
     private Rigidbody2D rb;

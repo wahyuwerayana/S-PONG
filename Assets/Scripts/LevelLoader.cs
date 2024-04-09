@@ -7,8 +7,8 @@ public class LevelLoader : MonoBehaviour
 {
     public Animator transition;
     public float transitionTime = 2f;
-    public void LoadNextScene(){
-        StartCoroutine(LoadLevel("Game"));
+    public void LoadNextScene(string sceneName){
+        StartCoroutine(LoadLevel(sceneName));
     }
 
     IEnumerator LoadLevel(string sceneName){

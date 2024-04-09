@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public string charL, charR;
+    public TMP_Text playerSide;
+    public GameObject endPanel;
     public int PlayerScoreL = 0;
     public int PlayerScoreR = 0;
 
@@ -30,21 +34,32 @@ public class GameManager : MonoBehaviour
         if(wallID == "Line L"){
             PlayerScoreR = PlayerScoreR + 10;
             txtPlayerScoreR.text = PlayerScoreR.ToString();
-            Invoke("ScoreCheck", 1);
+           // Invoke("ScoreCheck", 1);
         } else{
             PlayerScoreL = PlayerScoreL + 10;
             txtPlayerScoreL.text = PlayerScoreL.ToString();
-            Invoke("ScoreCheck", 1);
+           // Invoke("ScoreCheck", 1);
         }
+        ScoreCheck();
+    }
+
+    public void ChangetoMenu(){
+        this.gameObject.SendMessage("ChangeScene", "MainMenu");
     }
 
     public void ScoreCheck(){
         if(PlayerScoreL == 50){
             Debug.Log("Player L Win!");
-            this.gameObject.SendMessage("ChangeScene", "MainMenu");
+            playerSide.text = charL;
+            endPanel.SetActive(true);
         } else if(PlayerScoreR == 50){
             Debug.Log("Player R Win!");
-            this.gameObject.SendMessage("ChangeScene", "MainMenu");
+            playerSide.text = charR;
+            endPanel.SetActive(true);
+        }
+
+        if((PlayerScoreL == 50) || (PlayerScoreR == 50)){
+            Invoke("ChangetoMenu", 3);
         }
     }
 }

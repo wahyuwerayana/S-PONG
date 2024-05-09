@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public string charL, charR;
     public TMP_Text playerSide;
+    public GameObject startPanel;
     public GameObject endPanel;
     public int PlayerScoreL = 0;
     public int PlayerScoreR = 0;
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        startPanel.SetActive(true);
         txtPlayerScoreL.text = PlayerScoreL.ToString();
         txtPlayerScoreR.text = PlayerScoreR.ToString();
     }

@@ -1,5 +1,5 @@
 # **S-PONG**
-<img src="https://github.com/wahyuwerayana/S-PONG/assets/115724777/2d7d8995-1cf6-4ea0-944f-9b02478d0b53" height="225px">
+<img src="https://github.com/wahyuwerayana/S-PONG/assets/115724777/2d7d8995-1cf6-4ea0-944f-9b02478d0b53" height="300px">
 
 ## 📄About
 S-PONG is a 2D Pong Game with space theme created with Unity Engine.

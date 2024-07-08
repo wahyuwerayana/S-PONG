@@ -14,8 +14,8 @@ Players control spaceship positioned on opposite sides of the screen, maneuverin
   Enjoy local multiplayer, facing off against your friend.
 
 ## 🕹️Controls
-- Use WASD to control player 1
-- Use Arrow Keys to control player 2
+- Use WASD to control Player 1
+- Use Arrow Keys to control Player 2
 
 ## ⚙️Setup
 - Go to the release tab located in the right side of this page.

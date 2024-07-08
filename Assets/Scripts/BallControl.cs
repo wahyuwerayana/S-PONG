@@ -36,10 +36,11 @@ public class BallControl : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D other) {
-        bounceSound.Play();
-        Vector2 vel;
-        vel.x = rb.velocity.x;
-        vel.y = (rb.velocity.y / 2) + (other.collider.attachedRigidbody.velocity.y / 3);
-        rb.velocity = vel;
+        Debug.Log(other);
+        // bounceSound.Play();
+        // Vector2 vel;
+        // vel.x = rb.velocity.x;
+        // vel.y = (rb.velocity.y / 2) + (other.collider.attachedRigidbody.velocity.y / 3);
+        // rb.velocity = vel;
     }
 }

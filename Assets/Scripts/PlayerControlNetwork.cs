@@ -25,8 +25,8 @@ public class PlayerControlNetwork : AttributesSync
         if(!_avatar.IsMe)
             return;
         rb = GetComponent<Rigidbody2DSynchronizable>();
-        //multiplayer = FindObjectOfType<Multiplayer>();
-        //isHost = multiplayer.Me.IsHost;
+        multiplayer = FindObjectOfType<Multiplayer>();
+        isHost = multiplayer.Me.IsHost;
     }
 
     // Update is called once per frame
@@ -41,15 +41,13 @@ public class PlayerControlNetwork : AttributesSync
 
         Vector3 movement = new Vector3(_horizontal, _vertical, 0) * speed;
         rb.velocity = movement;
-        // if(isHost){
-        //     transform.position = new Vector3(Mathf.Clamp(transform.position.x, boundXback, boundXfront), 
-        //     Mathf.Clamp(transform.position.y, -boundY, boundY), 
-        //     transform.position.z);
-        // }
-        // else{
-        //     transform.position = new Vector3(Mathf.Clamp(transform.position.x, -boundXfront, -boundXback),
-        //     Mathf.Clamp(transform.position.y, -boundY, boundY),
-        //     transform.position.z);
-        // }
+        if(isHost){
+            transform.position = new Vector3(Mathf.Clamp(rb.position.x, boundXback, boundXfront), 
+            Mathf.Clamp(rb.position.y, -boundY, boundY));
+        }
+        else{
+            transform.position = new Vector3(Mathf.Clamp(rb.position.x, -boundXfront, -boundXback),
+            Mathf.Clamp(rb.position.y, -boundY, boundY));
+        }
     }
 }

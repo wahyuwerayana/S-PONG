@@ -15,8 +15,11 @@ public class SideWallNetwork : AttributesSync
         if(hitInfo.name == "Ball"){
             goalSound.Play();
             string wallName = transform.name;
-            GameManagerNetwork.instance.BroadcastRemoteMethod(nameof(Score), wallName);
-            hitInfo.gameObject.SendMessage("RestartGame", 1.0f, SendMessageOptions.RequireReceiver);
+            if(multiplayer.Me.IsHost){
+                GameManagerNetwork.instance.BroadcastRemoteMethod(nameof(Score), wallName);
+                hitInfo.GetComponent<BallControlNetwork>().RestartGame();
+                hitInfo.gameObject.SendMessage("RestartGame", 1.0f, SendMessageOptions.RequireReceiver);
+            }
         }
     }
 }

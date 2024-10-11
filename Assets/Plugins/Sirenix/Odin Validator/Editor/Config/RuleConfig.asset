@@ -13,7 +13,17 @@ MonoBehaviour:
   m_Name: RuleConfig
   m_EditorClassIdentifier: 
   projectRules:
-  - Enabled: 1
+  - Enabled: 0
+    EnabledOverridden: 1
+    Type: Sirenix.OdinValidator.Editor.Validators.UnityObjectScriptMatchValidator,
+      Sirenix.OdinValidator.Editor
+    Override: 
+  - Enabled: 0
+    EnabledOverridden: 1
+    Type: Sirenix.OdinValidator.Editor.Validators.UICanvasChildElementValidator,
+      Sirenix.OdinValidator.Editor
+    Override: 
+  - Enabled: 0
     EnabledOverridden: 1
     Type: Sirenix.OdinValidator.Editor.Validators.ShaderCompilerErrorsValidator,
       Sirenix.OdinValidator.Editor
@@ -24,3 +34,38 @@ MonoBehaviour:
       2,\r\n        \"$rcontent\": [\r\n            $fstrref:\"{\\\"guid\\\":\\\"f75014305794b3948a3c6d5ccd550e05\\\",\\\"IsBroken\\\":false,\\\"Type\\\":1,\\\"AssetPath\\\":\\\"Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/FinalPass.shader\\\",\\\"SubAsset\\\":{\\\"AssetType\\\":{\\\"TypeName\\\":\\\"\\\"},\\\"InstanceID\\\":0,\\\"Index\\\":0},\\\"Hierarchy\\\":{\\\"SubNames\\\":[],\\\"SubIndices\\\":[]},\\\"Component\\\":{\\\"ComponentIndex\\\":0,\\\"ComponentType\\\":{\\\"TypeName\\\":\\\"\\\"}},\\\"Name\\\":\\\"Hidden/PostProcessing/FinalPass\\\",\\\"ObjectType\\\":{\\\"TypeName\\\":\\\"UnityEngine.Shader,
       UnityEngine.CoreModule\\\"}}\",\r\n            $fstrref:\"{\\\"guid\\\":\\\"382151503e2a43a4ebb7366d1632731d\\\",\\\"IsBroken\\\":false,\\\"Type\\\":1,\\\"AssetPath\\\":\\\"Packages/com.unity.postprocessing/PostProcessing/Shaders/Builtins/Uber.shader\\\",\\\"SubAsset\\\":{\\\"AssetType\\\":{\\\"TypeName\\\":\\\"\\\"},\\\"InstanceID\\\":0,\\\"Index\\\":0},\\\"Hierarchy\\\":{\\\"SubNames\\\":[],\\\"SubIndices\\\":[]},\\\"Component\\\":{\\\"ComponentIndex\\\":0,\\\"ComponentType\\\":{\\\"TypeName\\\":\\\"\\\"}},\\\"Name\\\":\\\"Hidden/PostProcessing/Uber\\\",\\\"ObjectType\\\":{\\\"TypeName\\\":\\\"UnityEngine.Shader,
       UnityEngine.CoreModule\\\"}}\"\r\n        ]\r\n    }\r\n}"
+  - Enabled: 0
+    EnabledOverridden: 1
+    Type: Sirenix.OdinValidator.Editor.Validators.MissingUnityObjectReferenceValidator,
+      Sirenix.OdinValidator.Editor
+    Override: 
+  - Enabled: 0
+    EnabledOverridden: 1
+    Type: Sirenix.OdinValidator.Editor.Validators.MissingScriptValidator, Sirenix.OdinValidator.Editor
+    Override: 
+  - Enabled: 0
+    EnabledOverridden: 1
+    Type: Sirenix.OdinValidator.Editor.Validators.MeshRendererValidator, Sirenix.OdinValidator.Editor
+    Override: 
+  - Enabled: 0
+    EnabledOverridden: 1
+    Type: Sirenix.OdinValidator.Editor.Validators.MaterialValidator, Sirenix.OdinValidator.Editor
+    Override: 
+  - Enabled: 0
+    EnabledOverridden: 1
+    Type: Sirenix.OdinValidator.Editor.Validators.InvalidLayerValidator, Sirenix.OdinValidator.Editor
+    Override: 
+  - Enabled: 0
+    EnabledOverridden: 1
+    Type: Sirenix.OdinValidator.Editor.Validators.HugeTransformPositionsValidator,
+      Sirenix.OdinValidator.Editor
+    Override: 
+  - Enabled: 0
+    EnabledOverridden: 1
+    Type: Sirenix.OdinValidator.Editor.Validators.DuplicateComponentsValidator, Sirenix.OdinValidator.Editor
+    Override: 
+  - Enabled: 0
+    EnabledOverridden: 1
+    Type: Sirenix.OdinValidator.Editor.Validators.BrokenPrefabConnectionValidator,
+      Sirenix.OdinValidator.Editor
+    Override: 

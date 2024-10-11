@@ -2424,14 +2424,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79528de419dbc714089090240bbffde6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveUp: 119
-  moveDown: 115
-  moveLeft: 97
-  moveRight: 100
   speed: 10
   boundY: 4
   boundXfront: -2
   boundXback: -8
+  isLeftPlayer: 1
 --- !u!60 &1276331609
 PolygonCollider2D:
   m_ObjectHideFlags: 0

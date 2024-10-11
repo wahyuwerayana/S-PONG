@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7424784623943464147}
   - component: {fileID: 6089303275962961764}
   - component: {fileID: 1390206682143745802}
-  - component: {fileID: 4989030367964934467}
   - component: {fileID: 226040054833781858}
+  - component: {fileID: -5792491357309858802}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -150,21 +150,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.06
---- !u!114 &4989030367964934467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 65314336451351190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0ba3f4f05223a741b7ade3c4bc1487c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounceSound: {fileID: 0}
-  maxSpeed: 10
-  tr: {fileID: 0}
 --- !u!96 &226040054833781858
 TrailRenderer:
   serializedVersion: 3
@@ -287,3 +272,23 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 0
+--- !u!114 &-5792491357309858802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65314336451351190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a8d0176c1530d145a5ce8f18a9c86a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Multiplayer: {fileID: 0}
+  _uidString: 7008794b-88db-4f2a-8a01-d6324d5c6576
+  Reliability: 1
+  LocalMethodBehavior: 1
+  bounceSoundClip: {fileID: 8300000, guid: 128a672ce9161024e9ce4929b26010d7, type: 3}
+  bounceSound: {fileID: 0}
+  moveSpeed: 5
+  tr: {fileID: 0}

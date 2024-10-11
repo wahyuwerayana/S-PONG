@@ -117,10 +117,10 @@ GameObject:
   - component: {fileID: 6068907876705645686}
   - component: {fileID: 2232085131104325585}
   - component: {fileID: 6917103849687076160}
-  - component: {fileID: 6526195825439613186}
   - component: {fileID: 670813024098289472}
-  - component: {fileID: 8932665289516311181}
-  - component: {fileID: 7514990899518197955}
+  - component: {fileID: 9146956744163523636}
+  - component: {fileID: 5872151191597805023}
+  - component: {fileID: -8387851861805342311}
   m_Layer: 0
   m_Name: Spaceship L
   m_TagString: Player L
@@ -219,30 +219,10 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &6526195825439613186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3044470548077924909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79528de419dbc714089090240bbffde6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveUp: 119
-  moveDown: 115
-  moveLeft: 97
-  moveRight: 100
-  speed: 10
-  boundY: 4
-  boundXfront: -2
-  boundXback: -8
 --- !u!60 &670813024098289472
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -344,7 +324,7 @@ PolygonCollider2D:
       - {x: 0.16651934, y: -0.32733887}
       - {x: 0.2330361, y: -0.32715145}
   m_UseDelaunayMesh: 0
---- !u!114 &8932665289516311181
+--- !u!114 &9146956744163523636
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -353,45 +333,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 3044470548077924909}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26b716c41e9b56b4baafaf13a523ba2e, type: 3}
+  m_Script: {fileID: 11500000, guid: ca63b51653d1b7a4a85b8d3002573ea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <IsNested>k__BackingField: 0
-  <ComponentIndex>k__BackingField: 0
-  <PredictedSpawn>k__BackingField: {fileID: 0}
-  <PredictedOwner>k__BackingField: {fileID: 0}
-  NetworkBehaviours:
-  - {fileID: 7514990899518197955}
-  <InitializedParentNetworkBehaviour>k__BackingField: {fileID: 0}
-  <InitializedNestedNetworkObjects>k__BackingField: []
-  _isNetworked: 1
-  _isSpawnable: 1
-  _isGlobal: 0
-  _initializeOrder: 0
-  _defaultDespawnType: 0
-  NetworkObserver: {fileID: 0}
-  _enablePrediction: 0
-  _predictionType: 0
-  _graphicalObject: {fileID: 0}
-  _detachGraphicalObject: 0
-  _enableStateForwarding: 1
-  _networkTransform: {fileID: 0}
-  _ownerInterpolation: 1
-  _ownerSmoothedProperties: 255
-  _adaptiveInterpolation: 3
-  _spectatorSmoothedProperties: 255
-  _spectatorInterpolation: 2
-  _enableTeleport: 0
-  _teleportThreshold: 1
-  <PrefabId>k__BackingField: 6
-  <SpawnableCollectionId>k__BackingField: 0
-  <AssetPathHash>k__BackingField: 15652463463490020150
-  <SceneId>k__BackingField: 0
-  SerializedTransformProperties:
-    Position: {x: -5.98, y: -0.01, z: 0}
-    Rotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-    LocalScale: {x: 1, y: 1, z: 1}
---- !u!114 &7514990899518197955
+  Multiplayer: {fileID: 0}
+  _uidString: c077d803-bae3-4985-977b-8ec0da0d31ca
+  Reliability: 1
+  LocalMethodBehavior: 1
+  speed: 10
+  boundY: 4
+  boundXfront: -2
+  boundXback: -8
+  ballPrefab: {fileID: 65314336451351190, guid: b95b83d0404b09c469bda0d8034bce03, type: 3}
+--- !u!114 &5872151191597805023
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -400,9 +354,52 @@ MonoBehaviour:
   m_GameObject: {fileID: 3044470548077924909}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a6a39c46bf52104ba8efe3100bce3f7, type: 3}
+  m_Script: {fileID: -2141718255, guid: 0ae8d181602a00248a82f64a684a1c88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 0
-  _addedNetworkObject: {fileID: 8932665289516311181}
-  _networkObjectCache: {fileID: 8932665289516311181}
+  Multiplayer: {fileID: 0}
+  IsPossessor: 0
+  IsPossessed: 0
+  OnPossessed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUnpossessed:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-8387851861805342311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3044470548077924909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1315754324, guid: 0ae8d181602a00248a82f64a684a1c88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Multiplayer: {fileID: 0}
+  _uidString: 94c8dee7-af3a-4d2f-a81f-dac940b33e66
+  BucketBehaviors:
+  - Name: Min
+    NetLOD: 0
+    Frequency: -1
+  - Name: Low
+    NetLOD: 1
+    Frequency: 0
+  - Name: Mid
+    NetLOD: 2
+    Frequency: 0
+  - Name: High
+    NetLOD: 3
+    Frequency: 0
+  - Name: Max
+    NetLOD: 4
+    Frequency: 120
+  Reliability: 1
+  SyncEveryNUpdates: 10
+  FullSyncEveryNSync: 4
+  SendData: 1
+  ApplyAsTransform: 0
+  AllowCollisionToAssumeOwner: 1
+  Rigidbody: {fileID: 6917103849687076160}

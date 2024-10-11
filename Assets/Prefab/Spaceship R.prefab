@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 1917233894640710694}
   - component: {fileID: 3160907314956508040}
   - component: {fileID: 7647375012771590824}
-  - component: {fileID: 4109868079473808716}
   - component: {fileID: 3131437725764901489}
   - component: {fileID: 3529130646403495033}
-  - component: {fileID: 8980411430761453733}
+  - component: {fileID: -3738856595998653494}
+  - component: {fileID: -6489439852270480252}
+  - component: {fileID: 7385918006203451207}
   m_Layer: 0
   m_Name: Spaceship R
   m_TagString: Player R
@@ -117,26 +118,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &4109868079473808716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2072180825647805794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79528de419dbc714089090240bbffde6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveUp: 273
-  moveDown: 274
-  moveLeft: 276
-  moveRight: 275
-  speed: 10
-  boundY: 4
-  boundXfront: -2
-  boundXback: -8
 --- !u!60 &3131437725764901489
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -248,7 +229,9 @@ MonoBehaviour:
   <PredictedSpawn>k__BackingField: {fileID: 0}
   <PredictedOwner>k__BackingField: {fileID: 0}
   NetworkBehaviours:
-  - {fileID: 8980411430761453733}
+  - {fileID: 0}
+  - {fileID: -3738856595998653494}
+  - {fileID: -6489439852270480252}
   <InitializedParentNetworkBehaviour>k__BackingField: {fileID: 0}
   <InitializedNestedNetworkObjects>k__BackingField: []
   _isNetworked: 1
@@ -278,7 +261,7 @@ MonoBehaviour:
     Position: {x: 5.99, y: -0, z: 0}
     Rotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
     LocalScale: {x: 1, y: 1, z: 1}
---- !u!114 &8980411430761453733
+--- !u!114 &-3738856595998653494
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -287,12 +270,82 @@ MonoBehaviour:
   m_GameObject: {fileID: 2072180825647805794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a6a39c46bf52104ba8efe3100bce3f7, type: 3}
+  m_Script: {fileID: 11500000, guid: a2836e36774ca1c4bbbee976e17b649c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentIndexCache: 0
+  _componentIndexCache: 1
   _addedNetworkObject: {fileID: 3529130646403495033}
   _networkObjectCache: {fileID: 3529130646403495033}
+  _componentConfiguration: 0
+  _synchronizeParent: 0
+  _packing:
+    Position: 1
+    Rotation: 1
+    Scale: 0
+  _interpolation: 2
+  _extrapolation: 2
+  _enableTeleport: 0
+  _teleportThreshold: 1
+  _clientAuthoritative: 1
+  _sendToOwner: 1
+  _interval: 1
+  _synchronizePosition: 1
+  _positionSnapping:
+    X: 0
+    Y: 0
+    Z: 0
+  _synchronizeRotation: 1
+  _rotationSnapping:
+    X: 0
+    Y: 0
+    Z: 0
+  _synchronizeScale: 1
+  _scaleSnapping:
+    X: 0
+    Y: 0
+    Z: 0
+--- !u!114 &-6489439852270480252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072180825647805794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40bcde17fa5e03f44b87f9963ac281b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _componentIndexCache: 2
+  _addedNetworkObject: {fileID: 3529130646403495033}
+  _networkObjectCache: {fileID: 3529130646403495033}
+  _maximumSimultaneousHits: 16
+  _historyDuration: 0.5
+  _additionalSize: 0.1
+  _layers:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &7385918006203451207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072180825647805794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca63b51653d1b7a4a85b8d3002573ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Multiplayer: {fileID: 0}
+  _uidString: f580c3f9-0ca0-40ac-bbb1-a6f0f8b5b546
+  Reliability: 1
+  LocalMethodBehavior: 1
+  speed: 10
+  boundY: 4
+  boundXfront: -2
+  boundXback: -8
+  ballPrefab: {fileID: 0}
 --- !u!1 &8319764057147431833
 GameObject:
   m_ObjectHideFlags: 0

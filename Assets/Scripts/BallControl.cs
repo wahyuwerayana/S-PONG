@@ -8,6 +8,7 @@ public class BallControl : MonoBehaviour
     public float maxSpeed = 5f;
     private Rigidbody2D rb;
     public TrailRenderer tr;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -16,8 +17,8 @@ public class BallControl : MonoBehaviour
     }
 
     void GoBall(){
-        float rand = Random.Range(0, 2);
-        if (rand < 1){
+        float rand = Random.Range(1, 3);
+        if (rand == 1){
             rb.AddForce(new Vector2(20, -15));
         } else{
             rb.AddForce(new Vector2(-20, -15));

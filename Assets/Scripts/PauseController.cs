@@ -8,18 +8,18 @@ public class PauseController : MonoBehaviour
     public GameObject pauseMenu;
 
     void Start(){
-        Cursor.visible = false;
+        //Cursor.visible = false;
     }
 
     public void checkPaused(){
             isPaused = !isPaused;
 
             if(isPaused){
-                Cursor.visible = true;
+                //Cursor.visible = true;
                 Time.timeScale = 0;
                 pauseMenu.SetActive(true);
             } else{
-                Cursor.visible = false;
+                //Cursor.visible = false;
                 Time.timeScale = 1;
                 pauseMenu.SetActive(false);
             }

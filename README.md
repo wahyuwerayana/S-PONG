@@ -1,7 +1,7 @@
 # **S-PONG**
 <img src="https://github.com/wahyuwerayana/S-PONG/assets/115724777/2d7d8995-1cf6-4ea0-944f-9b02478d0b53" height="300px">
 
-## 📄About
+## 📄Description
 S-PONG is a 2D Pong Game with space theme created with Unity Engine.
 
 ## 🎯Gameplay
@@ -12,10 +12,12 @@ Players control spaceship positioned on opposite sides of the screen, maneuverin
   Play against an AI opponent, allowing for relaxed play.
 - **Local Multiplayer** <br>
   Enjoy local multiplayer, facing off against your friend.
+- **Online Multiplayer** <br>
+  Play with other player online by joining a room.
 
 ## 🕹️Controls
-- Use WASD to control Player 1
-- Use Arrow Keys to control Player 2
+- Use WASD to control Player (Singleplayer & Online Multiplayer)
+- Use Arrow Keys to control Player 2 (Local Multiplayer)
 
 ## ⚙️Setup
 - Go to the release tab located in the right side of this page.

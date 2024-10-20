@@ -15,8 +15,8 @@
         ├── ...
         ├── Animation                # This folder contains the animation and animator controller used for the gameobjects.
         ├── Prefab                   # This folder contains the gameobject prefab to use in the game scenes.
-        ├── Scripts                  # This folder contains all of the game script files.
         ├── Scenes                   # This folder contains scene for the game. You can open these scenes to play the game via Unity.
+        ├── Scripts                  # This folder contains all of the game script files.
         ├── Sounds                   # This folder contains sounds that is being used for the game.
         ├── Sprites                  # This folder contains all the sprites for the gameobject.
         ├── ....

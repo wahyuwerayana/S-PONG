@@ -1,92 +1,71 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Alteruna;
+using Unity.Netcode;
 
-public class BallControlNetwork : AttributesSync
+public class BallControlNetwork : NetworkBehaviour
 {
-    public AudioClip bounceSoundClip;
-    public AudioSource bounceSound;
+    public AudioClip bounceClip;
+    private AudioSource bounceSound;
     public float moveSpeed = 5f;
     private float syncedCountdown = 1f;
-    private float maxSpeed = 10f;
-    private Rigidbody2DSynchronizable rb;
+    private Rigidbody2D rb;
     public TrailRenderer tr;
-    private bool isHost;
-    private Multiplayer multiplayer;
-
-    [SynchronizableField]
-    private Vector2 syncedPosition;
-
-    [SynchronizableField]
-    private Vector2 syncedVelocity;
-
-    private void Awake(){
-        rb = GetComponent<Rigidbody2DSynchronizable>();
-        multiplayer = FindObjectOfType<Multiplayer>();
-        isHost = multiplayer.Me.IsHost;
-        tr = GetComponent<TrailRenderer>();
-    }
 
     void Start()
     {
-        if(isHost){
-            StartCoroutine(StartBallCooldown());
-        }
-        // tr = GetComponent<TrailRenderer>();
-        // //bounceSound.clip = bounceSoundClip;
-        // BroadcastRemoteMethod(nameof(GoBall));
+        rb = GetComponent<Rigidbody2D>();
+        tr = GetComponent<TrailRenderer>();
+        bounceSound = GetComponent<AudioSource>();
+        bounceSound.clip = bounceClip;
+
+        StartCoroutine(StartBallCooldown());
     }
 
-    private void FixedUpdate() {
-        Debug.Log(rb.velocity + " magnitude -> " + rb.velocity.magnitude);
-    }
-
-    [SynchronizableMethod]
     IEnumerator StartBallCooldown(){
         while(syncedCountdown > 0){
-            syncedCountdown -= Time.deltaTime;
-            Commit();
+            syncedCountdown -= Time.fixedDeltaTime;
             yield return null;
         }
-        
-        BroadcastRemoteMethod(nameof(GoBall));
+
+        if(GameManagerNetwork.instance.playerScoreLServer.Value >= GameManagerNetwork.SCORE || 
+            GameManagerNetwork.instance.playerScoreRServer.Value >= GameManagerNetwork.SCORE){
+            if(IsServer) DespawnBallRpc();
+            yield break;
+        }
+            
+        GoBallRpc();
     }
 
-    [SynchronizableMethod]
-    private void GoBall(){
+    [Rpc(SendTo.Everyone)]
+    private void GoBallRpc(){
         float rand = Random.Range(-1f, 1f);
         Vector2 startForce = new Vector2(rand, rand).normalized * moveSpeed;
         rb.velocity = startForce;
-        Commit();
     }
 
-    [SynchronizableMethod]
-    void ResetBall(){
+    [Rpc(SendTo.Everyone)]
+    void ResetBallRpc(){
+        tr.Clear();
         rb.velocity = Vector2.zero;
         transform.position = Vector2.zero;
-        tr.Clear();
-        Commit();
     }
 
-    public void RestartGame(){
-        if(isHost){
-            if(GameManagerNetwork.instance.PlayerScoreL >= 50 || GameManagerNetwork.instance.PlayerScoreR >= 50)
-                return;
+    [Rpc(SendTo.Everyone)]
+    public void RestartGameRpc(){
+        ResetBallRpc();
+        syncedCountdown = 2f;
+        StartCoroutine(StartBallCooldown());
+    }
 
-            BroadcastRemoteMethod(nameof(ResetBall));
-            syncedCountdown = 1f;
-            Commit();
-            StartCoroutine(StartBallCooldown());
+    [Rpc(SendTo.Server)]
+    public void DespawnBallRpc(){
+        GameObject ball = gameObject;
+        if(ball!= null){
+            ball.GetComponent<NetworkObject>().Despawn();
         }
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        if(isHost){
-            if(rb.velocity.magnitude > maxSpeed){
-                rb.velocity = rb.velocity.normalized * maxSpeed;
-                Commit();
-            }
-        }
+        bounceSound.Play();
     }
 }

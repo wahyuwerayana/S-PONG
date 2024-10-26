@@ -1,25 +1,16 @@
-using Alteruna;
+using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
-public class SideWallNetwork : AttributesSync
+public class SideWallNetwork : NetworkBehaviour
 {
     public AudioSource goalSound;
-    private Multiplayer multiplayer;
 
-    private void Start() {
-        multiplayer = FindObjectOfType<Multiplayer>();
-    }
-
-    void OnTriggerEnter2D(Collider2D hitInfo) {
-        if(hitInfo.name == "Ball"){
+    private void OnTriggerEnter2D(Collider2D hitInfo) {
+        if(hitInfo.CompareTag("Ball")){
             goalSound.Play();
             string wallName = transform.name;
-            if(multiplayer.Me.IsHost){
-                GameManagerNetwork.instance.BroadcastRemoteMethod(nameof(Score), wallName);
-                hitInfo.GetComponent<BallControlNetwork>().RestartGame();
-                hitInfo.gameObject.SendMessage("RestartGame", 1.0f, SendMessageOptions.RequireReceiver);
-            }
+            GameManagerNetwork.instance.ScoreServerRpc(wallName);
+            hitInfo.GetComponent<BallControlNetwork>().RestartGameRpc();
         }
     }
 }

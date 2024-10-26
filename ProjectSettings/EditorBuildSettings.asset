@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/2P.unity
     guid: c7e76c3e58d207d4ea0e05fada00269f
   - enabled: 1
-    path: Assets/Scenes/2P Online.unity
-    guid: 8602f2bdf9407c24c9ce6acdee907921
+    path: Assets/Scenes/2P Online Netcode.unity
+    guid: e53befb8d06567b4898a8fdcb076e07f
   m_configObjects: {}

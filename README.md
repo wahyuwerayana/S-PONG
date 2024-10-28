@@ -5,7 +5,8 @@
 
 # 📖Documentation
 - Made using Unity Editor 2022.3.19f1
-- Online Multiplayer system using Unity Netcode for GameObjects (WIP)
+- Online Multiplayer system using Unity Netcode for GameObjects
+- Global multiplayer game joining with Unity Relay
 - All assets are from itch.io
 
 ## 📂File Description
@@ -47,7 +48,7 @@
 <br />
 
 ## 📄Description
-**S-PONG** is a 2D Pong Game with space theme created with Unity Engine.
+**S-PONG** Online Multiplayer is a 2D Pong Game with space theme created with Unity Engine. Additionally, it has an online multiplayer for playing with other people remotely.
 
 ## 🎯Gameplay
 Player controls a spaceship positioned on opposite sides of the screen, maneuvering them vertically or horizontally to hit a comet-like ball back and forth. The goal is to score points by getting the ball past the opponent’s spaceship. The simplicity of the controls makes it accessible, while the increasing ball speed as the rally continues keeps the challenge alive.
@@ -58,7 +59,7 @@ Player controls a spaceship positioned on opposite sides of the screen, maneuver
 - **Local Multiplayer** <br>
   Enjoy local multiplayer, facing off against your friend.
 - **Online Multiplayer** <br>
-  Play with other player online by joining a room.
+  Play with other player online by joining a room with a join code.
 
 ## 🕹️Controls
 <table>

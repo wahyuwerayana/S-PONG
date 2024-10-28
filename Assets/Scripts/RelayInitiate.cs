@@ -25,7 +25,7 @@ public class RelayInitiate : MonoBehaviour
         AuthenticationService.Instance.SignedIn += () => {
             Debug.Log("Signed in " + AuthenticationService.Instance.PlayerId);
         };
-        await AuthenticationService.Instance.SignInAnonymouslyAsync();
+        if(!AuthenticationService.Instance.IsSignedIn) await AuthenticationService.Instance.SignInAnonymouslyAsync();
 
         createGameButton.interactable = true;
         joinGameButton.interactable = true;
@@ -56,7 +56,11 @@ public class RelayInitiate : MonoBehaviour
     }
 
     public async void JoinRelay(string joinCode){
-        Debug.Log(joinCode);
+        if(joinCode == null || joinCode.Length == 0){
+            networkUI.SetActive(true);
+            return;
+        }
+
         try{
             connectingText.text = "CONNECTING...";
             JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(joinCode);

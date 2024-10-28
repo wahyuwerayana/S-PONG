@@ -82,6 +82,7 @@ public class GameManagerNetwork : NetworkBehaviour
 
     public void ChangetoMenu(){
         NetworkManager.Singleton.Shutdown();
+        Destroy(NetworkManager.Singleton.gameObject);
         this.gameObject.SendMessage("ChangeScene", "MainMenu");
     }
 
